@@ -1,42 +1,36 @@
 package ru.netology.javacore;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Todos {
-    private int size = 7;
-    private ArrayList<String> listTasks = new ArrayList<>();
+    private final int SIZE = 7;
+    private Set<String> setTasks = new TreeSet<>();
 
     public void addTask(String task) {
-        if (listTasks.size() < size) {
-            listTasks.add(task);
+        if (setTasks.size() < SIZE) {
+            setTasks.add(task);
         }
     }
 
     public void removeTask(String task) {
-        listTasks.remove(task);
+        setTasks.remove(task);
     }
 
     public String getAllTasks() {
-        ArrayList<String> sortedList = sort(listTasks);
-        String out = "";
-        for (String item : sortedList) {
-            out += item + " ";
+        StringBuilder sb = new StringBuilder();
+        for (String item : setTasks) {
+            sb.append(item);
+            sb.append(" ");
         }
-        return out;
+        return sb.toString();
     }
 
-    public ArrayList sort(ArrayList listIn) {
-        ArrayList<String> listOut = new ArrayList<>(listIn);
-        Collections.sort(listOut);
-        return listOut;
+    public Set getSetTasks() {
+        return setTasks;
     }
 
-    public ArrayList<String> getListTasks() {
-        return listTasks;
-    }
-
-    protected void setListTasks(ArrayList oldListTasks) {
-        listTasks = oldListTasks;
+    protected void setSetTasks(Set oldSetTasks) {
+        setTasks = oldSetTasks;
     }
 }

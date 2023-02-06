@@ -1,25 +1,26 @@
 package ru.netology.javacore;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Memory {
-    int memorySize = 7;
-    Deque<ArrayList> arrayListArrayDeque = new ArrayDeque<>();
+    private final int MEMORYSIZE = 7;
+    Deque<Set> setArrayDeque = new ArrayDeque<>();
 
-    public void addMemory(ArrayList arrayListIn) {
-        if (arrayListIn != null) {
-            if (arrayListArrayDeque.size() > memorySize) {
-                arrayListArrayDeque.removeFirst();
+    public void addMemory(Set setIn) {
+        if (setIn != null) {
+            if (setArrayDeque.size() > MEMORYSIZE) {
+                setArrayDeque.removeFirst();
             }
-            ArrayList<String> arrayList = new ArrayList<>(arrayListIn);
-            arrayListArrayDeque.addLast(arrayList);
+            Set<String> treeSet = new TreeSet<>(setIn);
+            setArrayDeque.addLast(treeSet);
         }
     }
 
-    public ArrayList pollMemory() {
-        return arrayListArrayDeque.pollLast();
+    public Set pollMemory() {
+        return setArrayDeque.pollLast();
 
     }
 
