@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Todos {
-    private final int SIZE = 7;
+    private static final int SIZE = 7;
     private Set<String> setTasks = new TreeSet<>();
 
     public void addTask(String task) {

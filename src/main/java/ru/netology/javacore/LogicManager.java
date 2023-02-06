@@ -1,9 +1,9 @@
 package ru.netology.javacore;
 
 public class LogicManager {
-    private final String RESTORE = "RESTORE";
-    private final String ADD = "ADD";
-    private final String REMOVE = "REMOVE";
+    private static final String RESTORE = "RESTORE";
+    private static final String ADD = "ADD";
+    private static final String REMOVE = "REMOVE";
     Memory memory = new Memory();
 
     public void convertCommand(Todos todos, Operation operation) {

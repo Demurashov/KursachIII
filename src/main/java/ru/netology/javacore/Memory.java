@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Memory {
-    private final int MEMORYSIZE = 7;
+    private static final int MEMORYSIZE = 7;
     Deque<Set> setArrayDeque = new ArrayDeque<>();
 
     public void addMemory(Set setIn) {
